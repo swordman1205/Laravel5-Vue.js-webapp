@@ -1,0 +1,437 @@
+<template inline-template>
+    <div class="hero-box container-fluid">
+        <navbar></navbar>
+        <div class="row mb-5">
+            <div class="col-1 scroll-box">
+                <div class="scroll-box--text">
+                    <span>scroll down</span>
+                    <div class="dot"></div>
+                    <img :src="require('../../img/left-arrow.svg')" alt="" id="arrow-down">
+                </div>
+            </div>
+            <div class="jumbotron jumbotron-fluid col-11 hero-box--jum">
+                <div class="container h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-md-6 jumbotron-text">
+                            <h1 class="display-4">Why choose Orangogo?</h1>
+                            <p class="lead">Orangogo and the search engine for sports. A totally free, meritocratic and transparent platform. Add your sports club and get to the top of your audience!.</p>
+                            <button type="button" class="btn orango-btn">+ discover</button>
+                        </div>
+                        <div class="col-md-6 jumbotron-card">
+                            <div class="card m-auto" style="width: 70%">
+                                <div class="card-body">
+                                    <div class="locationASD"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp; Do you have a ASD in <a href="#" class="locationASD-place"><span>TURIN?&nbsp;<i class="fas fa-angle-down"></i></span></a></div>
+                                    <hr class="card-hr">
+                                    <div v-if="registration.selectedSport === ''">
+                                        <h4 class="card-title mb-5">Find out how many sports you can reach with Ornagogo!</h4>
+                                        <p class="card-text">Select your main sport:</p>
+                                    </div>
+                                    <div v-else>
+                                        <img class="card-sportImg" :src="registration.selectedSport.img" alt="">
+                                        <div class="card-selectedInfo">
+                                            <h3 class="card-numPeople">{{registration.selectedSport.numPeople}}</h3>
+                                            <p>sportsmen try <span class="card-sportType">{{registration.selectedSport.type}}</span> in Turin on Orangogo</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="inputGroupSelect01">
+                                                <span  v-if="registration.selectedSport === ''">
+                                                    icon
+                                                </span>
+                                                <span v-else>
+                                                    <img class="selectedIcon" :src="registration.selectedSport.icon" alt="">
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <select v-model="registration.selectedSport" class="custom-select" id="inputGroupSelect01" style="background-image: url( ../../img/keyboard_arrow_down_24px.svg);">
+                                            <option value="" selected>Your sport</option>
+                                            <option v-for="sport in sports" v-bind:value="{ id: sport.id, type: sport.type, icon: sport.icon, img: sport.img, numPeople: sport.numPeople }">{{ sport.type }}</option>
+                                        </select>
+                                    </div>
+                                    <!-- Button trigger modal -->
+                                    <div class="selectedBtn"  v-if="registration.selectedSport !== ''">
+                                        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">registration</button>
+                                    </div>
+                                    <!--MODAL BOX-->
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered justify-content-center" role="document">
+                                            <div class="modal-content modal-content--minW">
+                                                <div class="modal-body d-flex h-100">
+                                                    <div class="col-4 modal-steps" :class="{modalstepsNone:selected == 6}">
+
+                                                        <b-progress class="modal-steps--bar" :max="max" show-value :class="{steps1:selected == 1}">
+                                                            <b-progress-bar :value="counter">
+                                                                <span class="monkyIcon" :style="{'left':counter+25 + '%'}" v-show="counter > 0"  :class="{modalstepsNone:selected == 5}"><i class="fas fa-frog"></i></span>
+                                                            </b-progress-bar>
+                                                        </b-progress>
+                                                        <div v-show="step === 1" class="text-center  modal-steps--box">
+                                                            <h5 class="m-auto pb-5 w-75"><i class="fas fa-shield-alt" style="font-size: 4rem"></i></h5>
+                                                            <h4 class="m-auto pb-3 w-75 font-weight-bold">Lorem ipsum dolor sit amet.</h4>
+                                                            <p class="m-auto w-75 pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eaque fugiat nobis voluptatibus?</p>
+                                                        </div>
+
+                                                        <div v-show="step === 2" class="text-center  modal-steps--box">
+                                                            <h5 class="m-auto pb-5 w-75"><i class="fas fa-frog" style="font-size: 4rem"></i></h5>
+                                                            <h4 class="m-auto pb-3 w-75 font-weight-bold">Lorem ipsum dolor sit amet.</h4>
+                                                            <p class="m-auto w-75 pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eaque fugiat nobis voluptatibus?</p>
+                                                        </div>
+
+                                                        <div v-show="step === 3" class="text-center modal-steps--box">
+                                                            <h5 class="m-auto pb-5 w-75"><i class="fas fa-football-ball" style="font-size: 4rem"></i></h5>
+                                                            <h4 class="m-auto pb-3 w-75 font-weight-bold">Lorem ipsum dolor sit amet.</h4>
+                                                            <p class="m-auto w-75 pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eaque fugiat nobis voluptatibus?</p>
+                                                        </div>
+
+                                                        <div v-show="step === 4" class="text-center  modal-steps--box ">
+                                                            <h5 class="m-auto pb-5 w-75"><i class="fas fa-shield-alt" style="font-size: 4rem"></i></h5>
+                                                            <h4 class="m-auto pb-3 w-75 font-weight-bold">Lorem ipsum dolor sit amet.</h4>
+                                                            <p class="m-auto w-75 pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eaque fugiat nobis voluptatibus?</p>
+                                                        </div>
+
+                                                        <div v-show="step === 5" class="text-center  modal-steps--box">
+                                                            <h5 class="m-auto pb-5 w-75"><i class="fas fa-shield-alt" style="font-size: 4rem"></i></h5>
+                                                            <h4 class="m-auto pb-3 w-75 font-weight-bold">Lorem ipsum dolor sit amet.</h4>
+                                                            <p class="m-auto w-75 pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eaque fugiat nobis voluptatibus?</p>
+                                                        </div>
+
+                                                        <div v-show="step === 6" class="text-center  modal-steps--box">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-box col-8 justify-content-center align-self-center d-flex h-100" :class="{mauto:selected == 6}" id="emailForm">
+                                                        <form class="modal-box--steps justify-content-center align-self-center" v-show="step === 1" @submit.prevent="submitformEmail" data-vv-scope="from-mail"  method="post" >
+                                                            <h3 class="text-left font-weight-bold mb-2">What is your e-mail address?</h3>
+                                                            <div class="form-group mb-3" :class="{'has-error': errors.has('from-mail.email') }">
+                                                                <input class="form-control sportClubs-email" id="email" name="email" type="email" v-model="registration.email" v-validate="'required|email'"  placeholder="Email"><br>
+                                                                <p class="text-danger" v-if="errors.has('from-mail.email')">{{ errors.first('from-mail.email') }}</p>
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary pr-5 pl-5 pt-2 pb-2 modal-box--button"  v-bind:disabled="errors.any() || registration.email === ''" @click.prevent="submitformEmail(), selected=1">Continue</button>
+                                                        </form>
+
+                                                        <form class="modal-box--steps justify-content-center align-self-center" v-show="step === 2" @submit.prevent="submitformAddress" data-vv-scope="from-club" >
+                                                            <h3 class="text-left font-weight-bold mb-2">Hi, what's your name, your sports club?</h3>
+                                                            <div class="input-group mb-3" :class="{'has-error': errors.has('from-club.clubName') }">
+                                                                <input class="form-control" placeholder="Company name" id="clubName" type="text" v-model="registration.club" v-validate="'required|min:3'" name="clubName">
+                                                                <p class="text-danger" v-if="errors.has('from-club.clubName')">{{ errors.first('from-club.clubName') }}</p>
+                                                            </div>
+                                                            <button class="btn btn-primary pr-5 pl-5 pt-2 pb-2 modal-box--button"  v-bind:disabled="errors.any() || registration.club === ''" @click.prevent="submitformClub()">Continue</button>
+                                                            <br>
+                                                            <button class="btn modal-box--back__button mt-3"  @click.prevent="backLink()"><i class="fas fa-angle-left"></i>&nbsp;&nbsp;Return back</button>
+                                                        </form>
+
+                                                        <form class="modal-box--steps justify-content-center align-self-center" v-show="step === 3" @submit.prevent="submitformAddress" data-vv-scope="from-address" >
+                                                            <h3 class="mt-4 mb-4 text-left font-weight-bold">What's your address?</h3>
+
+                                                            <div class="input-group mb-3"  :class="{'has-error': errors.has('from-address.address') }">
+                                                                <input class="form-control" placeholder="Via Perrone, 5 Torino" id="address" type="address" v-model="registration.address" v-validate="'required|min:6'" name="address"><br>
+                                                                <p class="text-danger" v-if="errors.has('from-address.address')">{{ errors.first('from-address.address') }}</p>
+                                                            </div>
+
+                                                            <button class="btn btn-primary pr-5 pl-5 pt-2 pb-2 modal-box--button" v-bind:disabled="errors.any() || registration.address === ''" @click.prevent="submitformAddress()">Continue</button>
+                                                            <br>
+                                                            <button class="btn modal-box--back__button mt-3"  @click.prevent="backLink()"><i class="fas fa-angle-left"></i>&nbsp;&nbsp;Return back</button>
+
+                                                        </form>
+
+                                                        <form class="modal-box--steps justify-content-center align-self-center" v-show="step === 4"  @submit.prevent="submitformTags" data-vv-scope="from-tag" >
+
+                                                            <h3 class="text-left font-weight-bold mb-2">Club Sports</h3>
+                                                            <div class="input-group mb-3">
+                                                                <vue-tags-input
+                                                                        class="form-control"
+                                                                        v-model="tag"
+                                                                        :tags="tags"
+                                                                        :validation="validation"
+                                                                        :autocomplete-items="autocompleteItems"
+                                                                        @tags-changed="newTags => tags = newTags"
+                                                                        name="tag">
+                                                                </vue-tags-input>
+                                                                <p class="text-danger" v-if="errors.has('from-tag.tag')">{{ errors.first('from-tag.tag') }}</p>
+                                                            </div>
+                                                            <button class="btn btn-primary pr-5 pl-5 pt-2 pb-2 modal-box--button" v-bind:disabled="tags.length == 0" @click.prevent="submitformTags()">Continue</button>
+                                                            <br>
+                                                            <button class="btn modal-box--back__button mt-3"  @click.prevent="backLink()"><i class="fas fa-angle-left"></i>&nbsp;&nbsp;Return back</button>
+
+                                                        </form>
+
+                                                        <form class="modal-box--steps justify-content-center align-self-center" v-show="step === 5" @submit.prevent="submitformPassword" data-vv-scope="from-Password" >
+
+                                                            <h3 class="text-left font-weight-bold mb-2">Password</h3>
+                                                            <div class="input-group mb-3">
+                                                                <input class="form-control" type="password" placeholder="Password" v-model="registration.password" v-validate="'required|min:8|regex:^([0-9]+)$'" name="Password"><br>
+                                                                <p class="text-danger" v-if="errors.has('from-Password.Password')">{{ errors.first('from-Password.Password') }}</p>
+                                                            </div>
+
+                                                            <button type="submit" class="btn btn-primary pr-5 pl-5 pt-2 pb-2 modal-box--button" v-bind:disabled="errors.any() || registration.password === ''" @click.prevent="submitformPassword(), selected=6">Save</button>
+                                                            <br>
+                                                            <button class="btn modal-box--back__button mt-3"  @click.prevent="backLink()"><i class="fas fa-angle-left"></i>&nbsp;&nbsp;Return back</button>
+
+                                                        </form>
+
+                                                        <form v-show="step === 6" class="text-center">
+
+                                                            <h3 class="mt-5 mb-3 ml-auto font-weight-bold">Welcome on board</h3>
+                                                            <p class="card-tittle">Congratulations, the page of your sport secrets has been successfully created</p>
+                                                            <br>
+                                                            <hr class="card-done--hr">
+                                                            <br>
+                                                            <p class="card-title mb-3 ml-auto mr-auto">What are you waiting for? Create your first course on Ornagogo!</p>
+                                                            <router-link :to="{ name: 'registration' }"><button class="mb-3  ml-auto mr-auto btn btn-primary pr-5 pl-5 pt-2 pb-2"  data-dismiss="modal">CREATE COURSE</button></router-link>
+                                                            <p class="card-subText  ml-auto mr-auto">see company page</p>
+
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--MODAL BOX END-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <registrationline></registrationline>
+        <howOrangogoWork></howOrangogoWork>
+        <workwith></workwith>
+        <InfoBox></InfoBox>
+        <Reviews></Reviews>
+        <ContactForm></ContactForm>
+    </div>
+</template>
+
+<script>
+    import axios from 'axios'
+    import navbar from './Navbar.vue'
+    import registrationline from './SportClubs-partialsComponetns/RegistrationLine'
+    import howOrangogoWork from './SportClubs-partialsComponetns/howOrangogoWork'
+    import workwith from './SportClubs-partialsComponetns/WorkWith'
+    import InfoBox from './SportClubs-partialsComponetns/InfoBox'
+    import ContactForm from './SportClubs-partialsComponetns/ContactForm'
+    import Reviews from './SportClubs-partialsComponetns/Reviews'
+
+
+    import VueTagsInput from '@johmun/vue-tags-input'
+
+    /*
+        window.axios.defaults.headers.common = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+        };*/
+
+    export default {
+        components:{
+            'vue-tags-input':VueTagsInput,
+            'navbar':navbar,
+            'registrationline':registrationline,
+            'howOrangogoWork':howOrangogoWork,
+            'workwith':workwith,
+            'InfoBox':InfoBox,
+            'ContactForm':ContactForm,
+            'Reviews':Reviews,
+        },
+        name: "SportsClubs",
+        data() {
+            return {
+                counter: 0,
+                max: 100,
+                intervalID: 100,
+                sports: [],
+                errored: false,
+                selected: undefined,
+                step:1,
+                registration:{
+                    sport_id: '',
+                    selectedSport: '',
+                    email:'',
+                    club: '',
+                    address: '',
+                    password:''
+                },
+                tag: '',
+                tags: [],
+                autocompleteItems: [],
+                debounce: null,
+                validation: [{
+                    type: 'min-length',
+                    rule: /^.{4,}$/,
+                }]
+
+            }
+        },
+        mounted() {
+            axios
+                .get("https://api.myjson.com/bins/15ufpq")
+                .then(response => {
+                    this.sports = response.data.sport;
+                })
+                .catch(error => {
+                    console.log(error);
+                    this.errored = true;
+                })
+        },
+        methods:{
+            update(newTags) {
+                this.autocompleteItems = [];
+                this.tags = newTags;
+            },
+            initItems() {
+                if (this.tag.length === 0) return;
+                const url = `https://api.myjson.com/bins/15ufpq`;
+
+                clearTimeout(this.debounce);
+                this.debounce = setTimeout(() => {
+                    axios.get(url).then(response => {
+                        this.autocompleteItems = response.data.sport.map(a => {
+                            return { text: a.type };
+                        });
+                    }).catch(() => console.warn('Oh. Something went wrong'));
+                }, 600);
+            },
+            backLink() {
+                this.step--;
+                if (this.counter > 0) {
+                    this.counter -= 15;
+                }
+                this.intervalID = setInterval(() => {
+                    this.counter = (this.counter)%this.max
+                }, 9999999999)
+            },
+            submitformEmail() {
+                // Send a POST request
+                axios({
+                    method: 'post',
+                    url: '/api/companies/register',
+                    data: {
+                        typology_id: 1,
+                        sport_id: 2,
+                        user: {
+                            email: 'test@test.com'
+                        }
+                    }
+                }).then(() => {
+                    this.step =2;
+                    if (this.counter < 100) {
+                        this.counter += 15;
+                    }
+                    this.intervalID = setInterval(() => {
+                        this.counter = (this.counter)%this.max
+                    }, 9999999999)
+                })
+                    .catch(() => {
+                        // In the end with success
+                        alert('Error')
+                    });
+            },
+            submitformClub() {
+                // Send a POST request
+                axios({
+                    method: 'post',
+                    url: '/api/companies/{id}/name',
+                    data: {
+                        user: {
+                            club_name: this.registration.club
+                        }
+                    }
+                }).then(() => {
+                    // In the end with success
+                    alert('Error')
+                })
+                    .catch(() => {
+                        this.step =3;
+                        if (this.counter < 100) {
+                            this.counter += 15;
+                        }
+                        this.intervalID = setInterval(() => {
+                            this.counter = (this.counter)%this.max
+                        }, 9999999999)
+                    });
+            },
+            submitformAddress() {
+                // Send a POST request
+                axios({
+                    method: 'post',
+                    url: ' /api/companies/{id}/address',
+                    data: {
+                        user: {
+                            user_address: this.registration.address
+                        }
+                    }
+                }).then(() => {
+                    // In the end with success
+                    alert('Error')
+                })
+                    .catch(() => {
+                        this.step =4;
+                        if (this.counter < 100) {
+                            this.counter += 15;
+                        }
+                        this.intervalID = setInterval(() => {
+                            this.counter = (this.counter)%this.max
+                        }, 9999999999)
+                    });
+            },
+            submitformTags() {
+                var tags =  this.tags.map(function (el) { return el.text; });
+                console.log(tags);
+                // Send a POST request
+                axios({
+                    method: 'post',
+                    url: '/api/companies/{id}/sports',
+                    data: {
+                        user: {
+                            spots_tags: tags
+                        }
+                    }
+                }).then(() => {
+                    // In the end with success
+                    alert('Error')
+                })
+                    .catch(() => {
+                        this.step =5;
+                        if (this.counter < 100) {
+                            this.counter += 15;
+                        }
+                        this.intervalID = setInterval(() => {
+                            this.counter = (this.counter)%this.max
+                        }, 9999999999)
+                    });
+            },
+            submitformPassword() {
+                // Send a POST request
+                axios({
+                    method: 'post',
+                    url: ' /api/users/{user_id}/password',
+                    data: {
+                        user: {
+                            user_password: this.registration.password
+                        }
+                    }
+                }).then(() => {
+                    // In the end with success
+                    alert('Error')
+                })
+                    .catch(() => {
+                        this.step =6;
+                        if (this.counter < 100) {
+                            this.counter += 15;
+                        }
+                        this.intervalID = setInterval(() => {
+                            this.counter = (this.counter)%this.max
+                        }, 9999999999)
+                    });
+            }
+        },
+        watch: {
+            'tag': 'initItems',
+        },
+    }
+</script>
+
+<style scoped>
+</style>

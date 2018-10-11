@@ -1,0 +1,383 @@
+// Variables
+@import "../variables";
+/*-------Sports Clubs ---------*/
+
+.hero-box .vue-tags-input input:focus .vue-tags-input {
+  border-color: #80bdff !important;
+  outline: 0 !important;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(128, 189, 255, 0.5) !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(128, 189, 255, 0.5) !important;
+}
+
+.hero-box .input-group > .form-control:not(:last-child), .input-group > .custom-select:not(:last-child) {
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+}
+
+.hero-box .vue-tags-input[data-v-0c0b1017] {
+  width: 100vh !important;
+  max-width: none !important;
+}
+
+.hero-box .autocomplete[data-v-0c0b1017] {
+  width: 93% !important;;
+}
+
+.hero-box .form-control {
+  width: 100% !important;
+}
+
+.hero-box .input[data-v-0c0b1017] {
+  border: none !important;
+  position: relative !important;;
+  display: -webkit-box !important;;
+  display: -ms-flexbox !important;;
+  display: flex !important;;
+  -ms-flex-wrap: wrap !important;;
+  flex-wrap: wrap !important;;
+  -webkit-box-align: stretch !important;;
+  -ms-flex-align: stretch !important;;
+  align-items: stretch !important;;
+  min-width: 100% !important;
+}
+
+.hero-box .vue-tags-input {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.hero-box .modal-steps--box {
+  margin-top: 30%;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.hero-box .modal-steps--box p {
+  font-size: 0.7rem;
+}
+
+.hero-box .modal-box--button {
+  background-image: linear-gradient(to right, #346ae4, #3678ec, #3c86f2, #4694f9, #52a1fe);
+  color: #fff;
+  border-color: rgb(255, 255, 255);
+  width: 70%;
+}
+
+.hero-box .modal-box--back__button {
+  background: none;
+  border: none;
+  color: $orango;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.hero-box .modal-box--button:disabled {
+  color: #606060;
+  background-image: linear-gradient(to right, #e7e7e7, #e7e7e7, #e7e7e7, #e7e7e7, #e7e7e7);
+  border-color: #E7E7E7;
+  background-color: #E7E7E7;
+  width: 70%;
+}
+
+.hero-box .modal-box--steps {
+  text-align: center;
+  max-width: 50vh;
+}
+
+.hero-box .modal-box--steps h2 {
+  margin-bottom: 2rem;
+}
+
+.hero-box .modal-box {
+  float: right;
+}
+
+.hero-box .mauto {
+  margin: auto;
+  margin-right: 10%;
+  min-width: 80%;
+}
+
+.hero-box .card-subText {
+  text-transform: uppercase;
+  color: $orango;
+}
+
+.hero-box .modal-steps--bar {
+  height: 2px;
+  margin-top: 25%;
+  margin-left: auto;
+  max-width: 70%;
+  margin-right: auto;
+}
+
+.hero-box .progress-bar {
+  background-color: white;
+  height: 5px;
+  position: absolute;
+  margin-top: -1px;
+  border-radius: 5px;
+}
+
+.hero-box .modal-content--minW {
+  min-width: 115vh;
+  margin-top: 20% !important;
+  min-height: 65vh;
+  margin-left: 25%;
+}
+
+.hero-box .modal-dialog {
+  margin-top: -2rem !important;
+}
+
+.hero-box .modal-content {
+  margin-top: 15%;
+}
+
+.hero-box #exampleModal {
+  background-color: #000;
+}
+
+.hero-box .modal-steps {
+  float: left;
+  position: absolute;
+  min-width: 50%;
+  background-color: #007bff;
+  border-radius: 5px;
+  z-index: 2;
+  left: -15%;
+  top: -10vh;
+  color: white;
+  min-height: 85vh;
+}
+
+.hero-box .modalstepsNone {
+  display: none;
+}
+
+.hero-box .steps1::after {
+  content: "\f118" !important;
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  position: absolute;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: white;
+  right: 60px;
+}
+
+.hero-box .modal-steps--bar::after {
+  content: "\f52e \f118";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  position: absolute;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: white;
+  right: 60px;
+}
+
+.hero-box .monkyIcon {
+  transition: 1s;
+  position: absolute;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  width: 0px;
+  color: white;
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+.hero-box .fa-map-marker-alt {
+  color: white;
+}
+
+.hero-box .selectedBtn button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.hero-box .selectedBtn {
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.hero-box .selectedIcon {
+  width: 45px;
+}
+
+.hero-box .card-selectedInfo {
+  padding-top: 2rem;
+}
+
+.hero-box .card-sportType {
+  color: $blue;
+}
+
+.hero-box .card-numPeople {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.hero-box .card-sportImg {
+  width: 40%;
+  float: left;
+  padding: 15px 0;
+}
+
+.hero-box .locationASD-place:hover {
+  text-decoration: none;
+  color: $blue;
+}
+
+.hero-box .card-hr {
+  border-top: 2px solid rgba(0, 0, 0, 0.1)
+}
+
+.hero-box .input-group-text {
+  border-color: $blue;
+}
+
+.hero-box .locationASD {
+  font-weight: 600;
+  color: #4A4A4A;
+}
+
+.hero-box .custom-select {
+  -webkit-background-size: 8%;
+  background-size: 40px 20px;
+  border-color: $blue;
+  height: 60px;
+}
+
+.hero-box .input-group-text {
+  background-color: #fff;
+}
+
+.hero-box .card-text {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.hero-box .card-title {
+  font-weight: bold;
+}
+
+.hero-box .card {
+  border: none;
+}
+
+.hero-box .hero-box--jum {
+  border-radius: 0.5rem;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  background-image: url(/images/landing/form-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 83vh;
+}
+
+.hero-box .jumbotron-text {
+  color: #fff;
+}
+
+.hero-box .fa-map-marker-alt {
+  color: $blue;
+}
+
+.hero-box .orango-btn {
+  background-color: #f4812e;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 10px 15px;
+  font-weight: 600;
+}
+
+.hero-box .scroll-box--text {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 0.7rem;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  writing-mode: lr-tb;
+  width: max-content;
+  position: absolute;
+  bottom: 46px;
+  left: 0;
+  color: #c3c3c3;
+}
+
+.hero-box .scroll-text span {
+  margin-left: 5px;
+}
+
+.company-form-container {
+  margin: auto;
+  max-width: 430px;
+  .form-group {
+    input{
+      border-color: transparent;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      width: 100%;
+      min-height: 60px;
+      padding-left: 45px;
+    }
+  }
+
+  button{
+    border: none;
+    width: 100%;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .hero-box .scroll-text span {
+    margin-right: -5rem;
+  }
+
+}
+
+.hero-box .dot {
+  height: 25px;
+  width: 25px;
+  border: 1px solid #c4c4c4;
+  border-radius: 50%;
+  display: inline-block;
+  float: left;
+  margin-top: -5px;
+}
+
+@keyframes jump {
+  100% {
+    left: 0;
+  }
+  50% {
+    left: -18px;
+  }
+  0% {
+    left: 0;
+  }
+}
+
+.hero-box #arrow-down {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  animation: jump 5s infinite;
+  width: 25px;
+  height: 25px;
+  float: left;
+  margin-top: -5px;
+}

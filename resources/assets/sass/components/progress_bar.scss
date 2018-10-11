@@ -1,0 +1,52 @@
+// Variables
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: $progress-height 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.my-courses-progress {
+  display: flex;
+  height: $progress-height;
+  overflow: hidden; // force rounded corners by cropping it
+  font-size: $progress-font-size;
+  background-color: $progress-bg;
+  padding: 2px;
+  border-radius: 10px !important;
+  max-width: 130px;
+  max-height: 12px;
+  @include box-shadow($progress-box-shadow);
+
+  .progress-bar {
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: center;
+    color: $progress-bar-color;
+    text-align: center;
+    white-space: nowrap;
+    background-color: $progress-bar-bg;
+    @include transition($progress-bar-transition);
+  }
+}
+
+.registration-progress{
+  .progress-bar{
+    background-color: $acqua-blue;
+  }
+}
+
+.progress-bar-striped {
+  @include gradient-striped();
+  background-size: $progress-height $progress-height;
+}
+
+.progress-bar-animated {
+  animation: progress-bar-stripes $progress-bar-animation-timing;
+}

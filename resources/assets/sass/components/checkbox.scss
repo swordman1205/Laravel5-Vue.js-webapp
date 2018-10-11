@@ -1,0 +1,21 @@
+.orangogo-checkbox {
+  min-height: unset;
+  input {
+    & + .custom-control-label {
+      text-transform: none;
+      font-size: 13px;
+      &:before {
+        border: 1px solid $border-blue;
+        margin-top: -2px;
+      }
+      &:after {
+        margin-top: -2px;
+      }
+    }
+    &:not(:checked) + .custom-control-label {
+      &:before {
+        background-color: transparent;
+      }
+    }
+  }
+}

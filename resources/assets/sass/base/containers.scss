@@ -1,0 +1,11 @@
+.container-standard{
+  margin-right: 100px;
+  margin-left: 100px;
+  padding-top: 50px;
+
+  @include media ("<=tablet"){
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+

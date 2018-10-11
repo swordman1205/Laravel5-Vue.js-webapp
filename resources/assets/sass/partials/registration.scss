@@ -1,0 +1,170 @@
+// Variables
+@import "../variables";
+/*-------Contact Form---------*/
+
+.registration-progress {
+  height: 5px;
+  border-radius: 0;
+}
+
+.registrations-steps--info {
+  @include media("<=tablet") {
+    display: none;
+  }
+  padding-top: 10vh;
+  background-color: $dark-white;
+  height: auto;
+  border-left: 2px solid $border-grey;
+
+  &__text-container {
+    width: 22rem;
+    margin-left: 5rem;
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+.registrations-steps--box__small-label-left {
+  @include media ("<=tablet") {
+    margin-right: 0.7rem;
+  }
+  margin-right: 0.5rem;
+}
+#sport-select>div {
+  padding: 0.6rem;
+  position: relative
+}
+#sport-select .clear { bottom: 18px}
+#sport-select .open-indicator { bottom: 14px}
+
+.registrations-steps--box__small-label-center {
+  @include media ("<=tablet") {
+    margin: 0 1.5rem 0 0;
+  }
+  margin: 0 1.5rem 0 0;
+}
+
+.registrations-steps--box__form-container__small-input {
+  @include media ("<=tablet") {
+    width: 85%;
+  }
+}
+
+.registrations-steps--box__days-hour-container {
+  @include media("<=tablet") {
+    margin-top: 2rem;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding: 2rem 0;
+  }
+  .course-day-hour{
+    display: flex;
+    align-items: center;
+  }
+  .main-panel-picker {
+    @include media("<=tablet"){
+      width: 35%;
+    }
+    width: 40%;
+    position: relative;
+  }
+  margin-top: 2rem;
+}
+
+.registrations-steps--box__input-day-hour{
+  @include media("<=tablet") {
+    width: 100%;
+  }
+}
+
+.registrations-steps--info h3 {
+  font-size: 1.2rem;
+}
+
+.registrations-steps--box {
+  @include media("<=tablet") {
+    padding-top: 3rem;
+  }
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding-top: 10vh;
+  height: auto;
+}
+
+.registrations-steps--box__form-container {
+  @include media ("<=tablet") {
+    min-width: 20rem;
+
+  }
+  width: 30rem;
+ /* max-width: 30rem;
+  min-width: 25rem;*/
+}
+
+.registrations-steps--box legend {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.registrations-steps--box button {
+  color: #fff;
+  background-color: $blue;
+}
+
+.registrations-steps--box button:disabled {
+  background-color: $disable;
+}
+
+  /*.registrations-steps .row {
+    height: auto;
+    min-height: 99vh;
+  }*/
+
+/*.registrations-steps {
+  height: 99vh;
+}*/
+
+.registrations-steps--box__input-field-long {
+  height: 3.75rem;
+  width: 100%;
+}
+
+.registrations-steps--box__input-field-short {
+  height: 3.75rem;
+}
+
+.registrations-steps--box .vdp-datepicker input {
+  height: 3.75rem;
+  width: 68%;
+}
+
+.registrations-steps--box__nav-button-container {
+  position: absolute;
+  width: 60%;
+  bottom: 9rem;
+}
+
+.input-group-text {
+  background-color: #ffffff !important;
+  border: none !important;
+  height: 3.75rem;
+  border-radius: unset;
+
+}
+
+.registrations-steps--box__sell-mode-button{
+  @include media ("<=tablet"){
+    width: 50%;
+  }
+}
+
+.registrations-steps--box__form-container__nav-button{
+
+  width: 175px;
+  @include media('<=tablet'){
+    width: 120px;
+    height: 50px;
+  }
+}

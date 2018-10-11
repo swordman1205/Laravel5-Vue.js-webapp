@@ -1,0 +1,57 @@
+// Variables
+@import "../variables";
+
+.course-container {
+  background-color: $light-grey;
+  &__course-name-seo {
+    font-weight: 600;
+  }
+
+  &__banner__period{
+    padding: 5px 10px;
+    background-color: $blue-gradient-1;
+    color: $white;
+    border-radius: 3px;
+  }
+
+  &__address{
+    padding-right: 15px;
+  }
+
+  &__company-recipient-container{
+    display: flex;
+    align-items: center;
+  }
+
+  &__company-name{
+    text-transform: uppercase;
+    font-size: 12px;
+    float: left;
+    padding: 0 20px 0 0 ;
+    margin: 0;
+    color: $base-dark;
+  }
+  &__recipient{
+    font-size: 14px;
+    float: left;
+    padding: 5px 10px;
+    background-color: $orange-gradient-2 ;
+    color: #ffffff;
+    margin-left: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  &__days-time-container{
+    p {
+      font-size: 14px;
+      color: $blue-gradient-1;
+      font-weight: 600;
+    }
+  }
+}
+.course-box-overlap{
+  position: relative;
+  background: #fff;
+}

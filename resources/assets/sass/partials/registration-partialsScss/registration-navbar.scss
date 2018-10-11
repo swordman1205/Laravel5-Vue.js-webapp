@@ -1,0 +1,28 @@
+ // Variables
+@import "../../variables";
+/* ------ Registration Navbar ------ */
+
+.registration-navbar .navbar-brand p {
+  font-size: 0.8rem;
+}
+
+
+.registration-navbar {
+  text-transform: inherit;
+  background-color: #fff;
+}
+
+.registration-navbar--vertical-line {
+  top: 0.8rem;
+  position: absolute;
+  width: 0.119rem;
+  height: 2rem;
+  background-color: $border-grey;
+}
+
+.registration-navbar--button {
+  background-color: $orango;
+  color: #fff!important;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}

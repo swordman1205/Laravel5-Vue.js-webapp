@@ -1,0 +1,65 @@
+// Variables
+@import "../../variables";
+/*-------Registration Line---------*/
+
+.info-box--buttons button {
+  background: rgba(0,0,0,0) !important;
+  color: $blue!important;
+}
+
+.info-box--slider__box {
+  margin-top: 10vh;
+}
+
+.info-box--slider__box .slider1 {
+  width: 50vh;
+}
+
+
+.info-box hr {
+  border-bottom: 0px solid $border-grey;
+  margin-top: 10%;
+  display: inline-block;
+}
+
+.jumbotron-more--content h3{
+  font-size: 5rem;
+}
+
+.jumbotron-more--content p {
+  font-size: 1.2rem;
+}
+
+.jumbotron-more--content button {
+  color: #fff!important;
+  font-size: 1.2rem;
+  background: $blue;
+}
+
+.jumbotron-more--content {
+  color: #fff!important;
+  border-bottom: 2px solid rgba(255,255,255,0.5);;
+  border-top: 2px solid rgba(255,255,255,0.5);
+}
+
+.jumbotron-more {
+  background: url("../../../images/jum-more-img.jpg");
+  background-repit: none;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.info-box--text p{
+  font-size: 0.875rem;
+}
+
+.info-box h1{
+  color: #0081D7;
+}
+
+.jumbotron-card__card-body{
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}

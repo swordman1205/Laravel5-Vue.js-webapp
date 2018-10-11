@@ -1,0 +1,18 @@
+@import "../helpers/variables";
+
+
+%base-input {
+  height: $input-height;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  min-width: 180px;
+}
+
+.orangogo-input{
+  @extend %base-input;
+  border: 1px solid $border-blue;
+  &-selected{
+    border: 1px solid $border-grey;
+  }
+}

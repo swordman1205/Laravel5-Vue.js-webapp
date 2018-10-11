@@ -1,0 +1,11 @@
+.search-view-map {
+  height: 800px;
+  @include media ('<=tablet'){
+    margin-top: 30px;
+  }
+  flex: 1;
+  padding-left: 350px;
+  @include media-breakpoint-down('sm') {
+    padding-left: 0;
+  }
+}

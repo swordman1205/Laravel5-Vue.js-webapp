@@ -1,0 +1,10 @@
+// Variables
+@import "../../variables";
+/*-------Registration Line---------*/
+
+.federation-box{
+  background: $dark-grey;
+  display: flex;
+  border-top: 1px solid $border-grey;
+  border-bottom: 1px solid $border-grey;
+}

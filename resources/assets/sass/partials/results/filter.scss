@@ -1,0 +1,136 @@
+.search-view-filter {
+  &__show-results-mobile{
+    display: none;
+    @include media ('<=tablet'){
+      text-align: center;
+      display: block;
+
+      button{
+        padding: 10px 20px;
+      }
+    }
+  }
+  padding: 30px 30px;
+  @include media ('<=tablet'){
+    padding: 20px 0 0 0;
+  }
+  &-container{
+    @include media ('<=tablet'){
+      display: none;
+    }
+  }
+  &__view-options {
+    @include media ('<=tablet'){
+      display: none;
+    }
+    text-align: center;
+    .btn-group-toggle {
+      width: 150px;
+      label.btn {
+        font-size: 12px;
+        width: 50%;
+        padding: 3px 0;
+        text-transform: uppercase;
+        &.active {
+          color: white;
+        }
+      }
+    }
+    &__mobile{
+      button {
+        min-width: 80px;
+        font-size: 16px;
+        text-transform: capitalize;
+        width: auto;
+      }
+      display: none;
+      @include media ('<=tablet'){
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+  &__section {
+    padding-bottom: 15px;
+    border-bottom: 3px solid $border-grey;
+    &__title {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+    &__range {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      span {
+        margin: 0 10px;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+  &__results {
+    padding-top: 20px;
+    margin: 0;
+  }
+  &__sports {
+    .v-autocomplete {
+      .v-autocomplete-input-group {
+        input {
+          border-radius: 0;
+          border-color: $border-grey--darker;
+          box-shadow: none;
+          &::placeholder {
+            color: $border-grey;
+          }
+        }
+      }
+      .v-autocomplete-list {
+        background-color: white;
+        z-index: 100;
+        width: 100%;
+        top: 35px;
+        padding: 0 10px 10px;
+        border: 1px solid $border-grey--darker;
+        border-top: 0;
+        .v-autocomplete-list-item {
+          padding-top: 5px;
+          font-size: 13px;
+          &:first-child {
+            border-top: 2px solid $light-black;
+          }
+          &.v-autocomplete-item-active {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+  &__distance {
+    .vue-slider-component {
+      margin-top: 25px;
+    }
+    &__tooltip {
+      font-size: 12px;
+      margin-top: -5px;
+      color: $light-black;
+    }
+  }
+  &__date {
+    &__datepicker {
+      width: 100% !important;
+      border: 0 !important;
+      .day.cell.selected, .day.cell.selected:hover {
+        background-color: $orango;
+        color: white;
+      }
+      .day.cell:hover {
+        border-color: $orango !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.contact-container {
+  text-align: center;
+  padding-top: 50px;
+  &__info {
+    span {
+      color: $orango;
+      font-size: 18px;
+    }
+    a, a:hover {
+      color: $blue--alt;
+      text-decoration: none;
+    }
+  }
+  &__detail {
+    &__content {
+      font-size: 18px;
+      text-align: center;
+      display: inline-block;
+      width: 30%;
+      @include media-breakpoint-down('md') {
+        width: 100%;
+      }
+    }
+  }
+}

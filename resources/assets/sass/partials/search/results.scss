@@ -1,0 +1,118 @@
+.search-view-results {
+  background-color: $body-bg;
+  padding: 35px 20px;
+
+  @include media ('<=tablet'){
+    padding: 0;
+    background-color: unset;
+  }
+
+  &__free-trial-filter{
+    display: flex;
+    align-items: center;
+
+    @include media ('<=tablet'){
+      display: none;
+    }
+  }
+  &__header {
+    &__count-free-trial{
+      display: flex;
+      justify-content: space-between;
+
+      @include media('<=tablet'){
+        display: inline;
+
+      }
+    }
+    &__counts {
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .vue-switcher-color--orango {
+      margin-bottom: 0;
+      div {
+        background-color: $orango;
+        top: 0;
+        &:after {
+          background-color: white;
+        }
+      }
+      &.vue-switcher--unchecked {
+        div {
+          background-color: $light-black;
+        }
+      }
+    }
+  }
+  &__body {
+    .results-course-card {
+      @include media ('<=tablet'){
+      }
+      padding: 25px 0;
+      border-bottom: 1px solid $border-grey--darker;
+    }
+  }
+  &-sort-by {
+    margin-left: 50px;
+    .dropdown-toggle {
+      color: $base-dark;
+      text-decoration: none;
+      i {
+        color: $orango;
+        font-size: 20px;
+        position: relative;
+        top: 2px;
+        margin-right: 2px;
+      }
+    }
+    .dropdown-menu {
+      padding: 5px 10px;
+      .dropdown-item {
+        padding: 8px 30px 8px 0;
+        border-bottom: 1px solid $border-grey--darker;
+        text-transform: uppercase;
+        position: relative;
+        outline: none;
+        background-color: transparent;
+        color: inherit;
+        &:last-child {
+          border-bottom: 0;
+        }
+        i {
+          color: $orango;
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          height: fit-content;
+          margin: auto;
+        }
+      }
+    }
+  }
+  &-filter-chips {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    &__card {
+      display: flex;
+      align-items: center;
+      padding: 2px 0;
+      background: linear-gradient($orange-gradient-1, $orange-gradient-2);
+      border-radius: 3px;
+      color: white;
+      text-transform: uppercase;
+      margin-right: 15px;
+      &__text {
+        margin: 0;
+        padding: 3px 12px;
+        border-right: 1px solid white;
+      }
+      &__btn--remove, &__btn--remove:hover {
+        color: white;
+        padding: 0 8px;
+      }
+    }
+  }
+}

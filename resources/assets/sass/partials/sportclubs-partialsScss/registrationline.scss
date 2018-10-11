@@ -1,0 +1,32 @@
+
+// Variables
+@import "../../variables";
+/*-------Registration Line---------*/
+
+.line-box {
+  height: 70px;
+  background-color: #fff;
+}
+
+.line-box--button {
+  right: 10%;
+}
+
+.line-box--logo {
+  left: 10%;
+  border-right: 2px solid $body-bg;
+}
+
+.line-box--logo a img {
+  margin-top: 15%;
+  padding-right: 10%;
+  width: 85%;
+  padding-left: 15%;
+}
+
+.line-box--button button {
+  background: $blue;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 15%;
+}

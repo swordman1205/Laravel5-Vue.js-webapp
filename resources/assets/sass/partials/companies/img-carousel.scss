@@ -1,0 +1,26 @@
+// Variables
+@import "../../helpers/variables";
+@import "../../helpers/mixins";
+
+.img-carousel{
+  overflow:hidden;
+  &__container{
+    padding:0px;
+    width:100%;
+  }
+  &__wrap {
+    float:left;
+  }
+  .btn-prev-image,.btn-next-image {
+    position: absolute;
+    border-radius:50%;
+    height:2em;
+    width:2em;
+    font-size:1em;
+    box-shadow: 4px 2px 6px #aaa;
+    top:50%;
+    margin-top:-0.5em;
+  }
+  .btn-prev-image { left: 1em; padding-left:0.7em; }
+  .btn-next-image { right: 1em; padding-right:0.7em; }
+}

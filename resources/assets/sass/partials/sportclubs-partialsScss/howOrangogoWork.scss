@@ -1,0 +1,63 @@
+/*-------How Orangogo Work---------*/
+
+
+.work-container {
+  height: 100vh;
+}
+
+.work-container .row {
+  height: 60%!important;
+  width: 100%;
+}
+
+.work-container--slider__box {
+  height: 100%;
+}
+
+.work-container--slider {
+  padding-right: 0px!important;
+}
+
+.work-container .slider-item {
+  @include media('>=tablet') {
+    width: 70% !important;
+  }
+  margin: 15px !important;
+  border-radius: 5px !important;
+  height: 50vh !important;
+}
+
+.slider-pagination-bullets {
+  display: none;
+}
+
+.work-container--texts {
+}
+
+.work-container--texts__buttons button {
+  color: $blue;
+  background: none;
+}
+
+.work-container--texts__buttons button:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none ;
+  box-shadow: none ;
+}
+
+.slider-item--img {
+  height: 55vh;
+  margin-top: -5%;
+  margin-right: 5%;
+  float: right;
+}
+
+.slider-item--tittle {
+  width: fit-content;
+}
+
+.slider-item--text {
+  width: fit-content;
+  margin: 0;
+  font-size: 0.9rem;
+}

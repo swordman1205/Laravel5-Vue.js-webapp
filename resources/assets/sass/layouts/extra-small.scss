@@ -1,0 +1,27 @@
+@import "../helpers/variables.scss";
+
+@media screen and (max-width: $extra-small) {
+  .xs {
+    &-h1 {
+      font-size:2.2em;
+      font-weight: bold;
+    }
+    &-hidden {
+      display: none !important;
+    }
+
+    &-text-black {
+      color: $black !important;
+    }
+    &-bgimg-none {
+      background: none !important;
+    }
+    &-bgwhite {
+      background-color: #fff !important;
+    }
+    &-input-border-black input {
+      border-color: $gray-dark !important;
+      border-width: 1px !important;
+    }
+  }
+}

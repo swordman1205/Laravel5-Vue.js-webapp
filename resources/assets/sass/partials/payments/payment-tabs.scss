@@ -1,0 +1,83 @@
+// Variables
+@import "../../helpers/variables";
+@import "../../helpers/mixins";
+
+.payment-tabs{
+  border: none!important;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  &__card-header{
+    border: none;
+    .card-header{
+      display: flex;
+      justify-content: center;
+      background-color: $light-grey;
+      border: none;
+      .nav-item{
+        width: 220px;
+        text-align: center;
+        text-transform: uppercase;
+        border: none!important;
+        .nav-link{
+          border-radius: 50px;
+          color: $base-dark;
+          font-size: 10px;
+          border: none;
+        }
+        .active{
+          color: $white!important;
+          background-color: $orange-gradient-2;
+        }
+      }
+      .card-header-tabs{
+        background-color: $white;
+        border-radius: 50px;
+      }
+    }
+    .tab-content{
+      background-color: $light-grey;
+    }
+  }
+  &__cart{
+    table{
+      th{
+        border-top: none!important;
+        border-bottom: 1px solid lightgray;
+      }
+      thead{
+        text-align: center;
+        font-size: 12px;
+      }
+      tbody{
+
+        td{
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &__sports-man{
+    &__product-summary{
+      border-top: 1px solid lightgray;
+      border-bottom: 1px solid lightgray;
+      max-height: 164px;
+    }
+    &__form-container{
+      padding: 0 70px;
+    }
+  }
+  &__payment-form-container{
+    width: 55%;
+    margin: auto;
+    &__tab-list{
+      text-align: left;
+      .card-header{
+        justify-content: right;
+        display: block;
+        background-color: $white;
+      }
+    }
+  }
+}

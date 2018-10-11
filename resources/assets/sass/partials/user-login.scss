@@ -1,0 +1,143 @@
+.user-login {
+  max-width: 33.5rem;
+  margin: auto;
+  background-color: $white;
+  padding: 48px 88px;
+  @include media-breakpoint-down('sm') {
+    padding: 0;
+  }
+
+  .btn--google {
+    float: left;
+    width: 47%;
+  }
+
+  .btn--facebook {
+    float: right;
+    width: 47%;
+  }
+
+  &__divider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 25px;
+    &:before, &:after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: $border-grey;
+    }
+    span {
+      padding: 0 10px;
+      font-size: 13px;
+      text-transform: none;
+      font-weight: bold;
+      position: relative;
+      top: -2px;
+    }
+    &--no-text {
+      padding: 25px 0 15px;
+    }
+  }
+  &__forgot-password {
+    text-transform: none;
+    text-decoration: none;
+    margin-top: 5px;
+    display: block;
+    font-size: 14px;
+  }
+
+  &__register {
+    text-transform: none;
+    text-align: center;
+    font-weight: bold;
+    a {
+      color: $orango;
+      text-decoration: none;
+    }
+  }
+}
+
+
+/*MODAL USER LOGIN*/
+.modal-user-login {
+  padding: 25px 55px;
+  @include media-breakpoint-down('sm') {
+    padding: 0;
+  }
+  &__mask {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .3);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .vue-simple-spinner-text {
+      color: white !important;
+    }
+  }
+  .form-group {
+    margin-bottom: 10px;
+    .invalid-feedback {
+      text-transform: none;
+    }
+  }
+  .custom-select {
+    height: unset !important;
+  }
+  &__forgot-password {
+    text-transform: none;
+    text-decoration: none;
+    margin-top: 5px;
+    display: block;
+    font-size: 14px;
+  }
+  &__divider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 25px;
+    &:before, &:after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: $border-grey;
+    }
+    span {
+      padding: 0 10px;
+      font-size: 13px;
+      text-transform: none;
+      font-weight: bold;
+      position: relative;
+      top: -2px;
+    }
+    &--no-text {
+      padding: 25px 0 15px;
+    }
+  }
+  &__social-buttons {
+    display: flex;
+    align-items: center;
+    a, button {
+      flex: 1;
+      &:first-child {
+        margin-right: 15px;
+      }
+    }
+  }
+  &__register {
+    text-transform: none;
+    text-align: center;
+    font-weight: bold;
+    a {
+      color: $orango;
+      text-decoration: none;
+    }
+  }
+}
+
+

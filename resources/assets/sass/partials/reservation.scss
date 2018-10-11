@@ -1,0 +1,304 @@
+.reservation-box {
+  width: 380px;
+  letter-spacing: 0.4px;
+  overflow: hidden;
+  .card-img-top {
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+  &__image--placeholder {
+    background-color: $light-black;
+    min-height: 160px;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.25);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    &__name {
+      margin: 0;
+      font-weight: 600;
+    }
+    &__school {
+      margin: 0;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+  }
+  .card-body {
+    padding: 20px;
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    hr {
+      border-top: 2px solid $dark-white;
+    }
+  }
+  &__detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+      margin-bottom: 0;
+    }
+  }
+  &__btn--share {
+    color: $base-dark;
+    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid $border-grey;
+    text-align: center;
+    line-height: 50px;
+  }
+  &__days {
+    hr {
+      margin: 20px 0 30px;
+    }
+    &__intro {
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    &__guide {
+      color: $orango;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      padding: 15px 0 20px;
+      margin: 0;
+      text-decoration: none;
+      display: block;
+      &:hover {
+        color: $orango;
+        text-decoration: none;
+      }
+    }
+  }
+  &__actions {
+    li {
+      border: 0;
+      cursor: pointer;
+    }
+    &__text {
+      display: inline-block;
+    }
+    &__price {
+      float:right; border-left: 1px solid #fff;
+    }
+    &__book {
+      text-align: center;
+      &--disabled {
+        background: rgb(183,183,183);
+        background: linear-gradient(90deg, rgba(183,183,183,1) 0%, rgba(219,219,219,1) 100%);
+        cursor: not-allowed;
+      }
+    }
+    &__test-lesson {
+      background-color: $base-dark;
+      color: white;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      i {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.reservation__lesson__datetime {
+  display: flex;
+  border: 2px solid $border-grey;
+  padding: 8px 5px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  &__date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-right: 2px solid $border-grey;
+    &--date {
+      margin: 0;
+    }
+    &--month {
+      margin: 0;
+      font-size: 10px;
+    }
+  }
+  &__time {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  }
+  &--active {
+    border-color: $orango;
+  }
+}
+
+.reservation__address, .reservation-box__price {
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  i {
+    color: $dark-blue;
+    font-size: 26px;
+    margin-right: 8px;
+    &.circle {
+      color: white;
+      font-size: 13px;
+      background-color: $dark-blue;
+      max-width: 24px;
+      max-height: 24px;
+      min-width: 24px;
+      min-height: 24px;
+      border-radius: 50%;
+      line-height: 24px;
+      text-align: center;
+      margin-left: -2px;
+    }
+  }
+}
+
+.reservation-box__lessoncard {
+  z-index:20;
+}
+.reservation-box__lessoncard > div {
+  cursor: pointer;
+  border: 2px solid $gray-200;
+  padding: 6px;
+  font-size: 0.8em;
+}
+.reservation-box__lessoncard > div bold { font-size:0.9em }
+.reservation-box__lessoncard:not(:first-child) > div {
+  margin-left: -2px;
+}
+.reservation-box__lessoncard:last-child > div {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.reservation-box__lessoncard:first-child > div {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.reservation-box__lessoncard.reservation-box__lessoncard--active {
+  z-index:30;
+}
+.reservation-box__lessoncard.reservation-box__lessoncard--active > div {
+  border-color: $orange-gradient-1;
+}
+.reservation__lesson__dropdown {
+  position: relative;
+  &__selected {
+    position: relative;
+    .reservation__lesson__datetime {
+      border: 1px solid $border-grey;
+      border-radius: 3px;
+      box-shadow: 0px 2px 6px 0px $light-black;
+      margin-bottom: 0;
+    }
+    > i {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 20px;
+      font-size: 22px;
+      color: $light-black;
+      height: fit-content;
+      margin: auto;
+    }
+  }
+  &__list {
+    position: absolute;
+    width: 100%;
+    top: 64px;
+    margin-bottom: 0;
+    border: 1px solid $border-grey;
+    border-bottom: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0px 2px 6px 0px $light-black;
+    z-index: 1;
+    .reservation__lesson__datetime {
+      border: 0;
+      border-bottom: 1px solid $border-grey;
+      border-radius: 0;
+      padding: 10px 5px;
+      margin: 0;
+    }
+  }
+}
+
+.reservation__modal {
+  &__name {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  &__company {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .reservation__address {
+    margin-bottom: 40px;
+    i {
+      font-size: 20px;
+    }
+  }
+  &__price {
+    font-size: 12px;
+    span {
+      font-weight: 600;
+    }
+  }
+  &__confirm {
+    margin-top: 65px;
+    padding: 10px 80px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  &__btn--close {
+    position: absolute;
+    top: -70px;
+    color: black;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 32px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+
+.modal.show .modal-dialog {
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.modal-backdrop.show {
+  opacity: 0.8;
+}
+
+.reservation-modal .vdp-datepicker__calendar {
+  margin: auto;
+  width: 60%;
+}

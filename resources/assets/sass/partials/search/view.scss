@@ -1,0 +1,19 @@
+.search-view {
+  display: flex;
+  min-height: 80vh;
+  position: relative;
+  @include media('<=tablet'){
+    display: block;
+  }
+  &-results {
+    flex: 1;
+  }
+  .bs-drawer.bs-drawer__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include media-breakpoint-up('md') {
+      transform: translate(0);
+    }
+  }
+}

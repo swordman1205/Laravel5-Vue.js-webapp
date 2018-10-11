@@ -1,0 +1,14 @@
+// Variables
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+.divider-gray-200 {
+  border-top: 1px solid $gray-200;
+  margin-top: 20px;
+  padding-bottom:20px;
+}
+.divider-gray-dark {
+  border-top: 1px solid $gray-dark;
+  margin-top: 20px;
+  padding-bottom:20px;
+}

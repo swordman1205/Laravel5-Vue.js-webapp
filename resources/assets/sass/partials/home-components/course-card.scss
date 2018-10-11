@@ -1,0 +1,200 @@
+.home-course-card {
+  &__left-info{
+    margin-right: 40px;
+    width: 60%;
+  }
+  &__image {
+    border-radius: 5px;
+    height: 180px;
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    img {
+      width: 100%;
+    }
+  }
+  &__body {
+    padding-bottom: 20px;
+    p {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &__address {
+      margin-top: 10px;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      font-size: 13px;
+      i {
+        color: $orango;
+        margin-right: 5px;
+      }
+    }
+    &__name {
+      font-size: 18px;
+      margin-top: 5px;
+      margin-bottom: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    &__lessons {
+      &__day {
+        margin-right: 5px;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        color: $light-black;
+        text-align: center;
+        line-height: 22px;
+        border: 2px solid transparent;
+        &--has-lesson {
+          font-size:13px;
+          color: inherit;
+          border-color: $orango;
+          border-radius: 50%;
+          &__dark {
+            border: 1px solid $base-dark;
+          }
+        }
+      }
+    }
+    &__short-age-range {
+      font-size: 13px;
+      border-left: 1px solid $gray-100;
+      p {
+        margin: 0;
+      }
+      i {
+        color: $orango;
+        margin-right: 5px;
+      }
+    }
+    &__age-range {
+      font-size: 13px;
+      margin: 0;
+      i {
+        color: $orango;
+        margin-right: 5px;
+      }
+    }
+    &__rating {
+      display: flex;
+      align-items: center;
+      font-size: 10px;
+      margin-left: 15px;
+      i {
+        color: $orango;
+      }
+    }
+  }
+  &__actions {
+    text-align: center;
+    .btn {
+      text-transform: uppercase;
+      padding: 8px 30px;
+    }
+  }
+  &__tags {
+    position: absolute;
+    top: 20px;
+    div {
+      color: white;
+      font-size: 10px;
+      padding: 2px 5px;
+      border-radius: 3px;
+      width: fit-content;
+      margin-bottom: 5px;
+      i {
+        margin-right: 5px;
+      }
+      &.tag-orangogo {
+        background: linear-gradient($orange-gradient-1, $orange-gradient-2);
+      }
+      &.tag-primary {
+        background: linear-gradient($blue-gradient-1, $blue-gradient-2);
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &--detail {
+    display: flex;
+    .home-course-card__image {
+      margin-right: 25px;
+      position: relative;
+      a {
+        width: 250px;
+        min-height: unset;
+        height: 100%;
+      }
+      .home-course-card__tags {
+        left: -20px;
+      }
+    }
+    .home-course-card__body {
+      padding-bottom: 0;
+      &__address {
+        margin: 0;
+      }
+      &__name {
+        font-size: 24px;
+      }
+      &__lessons {
+        margin-bottom: 0;
+      }
+    }
+    .home-course-card__addition {
+      p {
+        margin: 0;
+      }
+      &__places-available {
+        color: $light-black;
+      }
+    }
+  }
+  &--in-map {
+    display: flex;
+    padding-left: 70px;
+    > * {
+      background-color: white;
+    }
+    .home-course-card__image {
+      padding-right: 10px;
+      position: relative;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      a {
+        width: 120px;
+        min-height: unset;
+        height: 100%;
+        border-radius: 10px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      .home-course-card__tags {
+        left: -70px;
+      }
+    }
+    .home-course-card__body {
+      padding: 10px 25px 10px 0;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      &__address {
+        margin: 0;
+      }
+      &__name {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  @include media-breakpoint-down('sm') {
+    &__image a {
+      height: 55vw;
+    }
+  }
+}

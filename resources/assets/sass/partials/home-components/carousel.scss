@@ -1,0 +1,44 @@
+.home-carousel {
+  overflow: hidden;
+  &__directions {
+    text-align: right;
+    &__btn {
+      color: $light-black;
+      width: 30px;
+      height: 30px;
+      border-radius: 30px;
+      border: 1px solid;
+      display: inline-block;
+      text-align: center;
+      line-height: 30px;
+      font-size: 20px;
+      margin-left: 5px;
+    }
+  }
+  &__content {
+    padding-top: 25px;
+    display: flex;
+    align-items: center;
+    transition: all .5s;
+    &__item {
+      height: 100%;
+      padding-right: 20px;
+    }
+  }
+  @include media-breakpoint-down('sm') {
+    overflow-x: auto;
+    width: calc(100% + 35px);
+    &__directions {
+      visibility: hidden;
+    }
+    &__content {
+      width: fit-content !important;
+      &__item {
+        width: calc(100vw - 50px) !important;
+        &:last-child {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}

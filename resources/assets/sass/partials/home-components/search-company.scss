@@ -1,0 +1,59 @@
+.home-search-company {
+  background-image: url(/images/homepage__register-company.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  &__content {
+    background-color: rgba(0,0,0,0.3);
+    padding: 120px 0 100px 90px;
+    &__title {
+      color: white;
+      font-size: 16px;
+    }
+    &__description {
+      color: white;
+      font-size: 50px;
+      margin-bottom: 25px;
+      font-weight: bold;
+    }
+    .home-sport-search {
+      width: 400px;
+    }
+    @include media("<=tablet"){
+      padding: 0;
+    }
+  }
+  .home-sport-search {
+    display: none;
+  }
+  @include media-breakpoint-down('md') {
+    background-image: none;
+    border-radius: 0;
+    overflow: unset;
+    &__content {
+      background-color: transparent;
+      padding: 0;
+      display: flex;
+      flex-direction: column-reverse;
+      &__title {
+        color: $base-dark;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+      &__description {
+        color: $base-dark;
+        font-size: 24px;
+        width: unset;
+        margin-bottom: 10px;
+      }
+      .home-sport-search {
+        display: none;
+      }
+    }
+    .home-sport-search {
+      display: flex;
+    }
+  }
+}
